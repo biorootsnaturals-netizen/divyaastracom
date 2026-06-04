@@ -1,479 +1,157 @@
-export type ProductCategory =
-  | 'pooja-essentials'
-  | 'idols-murthy'
-  | 'crystals-stones'
-  | 'malas-accessories'
-  | 'heritage-vault'
-
-export interface Product {
-  id: number
-  name: string
-  image: string
-  description: string
-  shortDescription: string
-  category: ProductCategory
-  price: number
-  originalPrice?: number
-  badge?: string
-  badgeColor?: string
-  unit: string
++164
+Lines changed: 164 additions & 0 deletions
+Original file line number	Diff line number	Diff line change
+@@ -0,0 +1,164 @@
+import { Link, createFileRoute } from '@tanstack/react-router'
+import products from '../../data/products'
+export const Route = createFileRoute('/products/$productId')({
+  component: RouteComponent,
+  loader: async ({ params }) => {
+    const product = products.find((p) => p.id === +params.productId)
+    if (!product) throw new Error('Product not found')
+    return product
+  },
+})
+function RouteComponent() {
+  const product = Route.useLoaderData()
+  return (
+    <>
+      <nav style={{
+        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
+        background: 'rgba(255,255,255,0.97)', backdropFilter: 'blur(12px)',
+        borderBottom: '1px solid rgba(201,168,76,0.2)',
+        padding: '0 60px', height: '72px',
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        boxShadow: '0 2px 20px rgba(0,0,0,0.06)',
+      }}>
+        <Link to="/" className="nav-brand">
+          <span className="nav-brand-text">DIVYAASTRA</span>
+        </Link>
+        <Link to="/" style={{
+          fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '2px',
+          color: 'var(--green)', textDecoration: 'none', textTransform: 'uppercase',
+        }}>
+          ← Back to Sacred Store
+        </Link>
+      </nav>
+      <div style={{ paddingTop: '72px', minHeight: '100vh', background: 'var(--cream)' }}>
+        <div style={{
+          maxWidth: '1100px', margin: '0 auto', padding: '60px 40px',
+          display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'start',
+        }}>
+          <div style={{ position: 'relative' }}>
+            <img
+              src={product.image}
+              alt={product.name}
+              style={{
+                width: '100%', aspectRatio: '3/4', objectFit: 'cover',
+                border: '1px solid rgba(201,168,76,0.2)',
+                boxShadow: '0 30px 80px rgba(0,0,0,0.1)',
+              }}
+            />
+            {product.badge && (
+              <span style={{
+                position: 'absolute', top: '20px', left: '20px',
+                fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '2px',
+                background: product.badgeColor || 'var(--green)',
+                color: '#fff', padding: '8px 16px', textTransform: 'uppercase',
+              }}>
+                {product.badge}
+              </span>
+            )}
+          </div>
+          <div style={{ paddingTop: '20px' }}>
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '6px',
+              color: 'var(--green)', textTransform: 'uppercase', marginBottom: '14px',
+            }}>
+              Sacred Product
+            </div>
+            <h1 style={{
+              fontFamily: "'Cinzel Decorative', serif",
+              fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 700, lineHeight: 1.2,
+              color: 'var(--text-dark)', marginBottom: '24px',
+            }}>
+              {product.name}
+            </h1>
+            <div style={{
+              width: '60px', height: '1px',
+              background: 'linear-gradient(to right, var(--gold), transparent)',
+              marginBottom: '24px',
+            }} />
+            <p style={{
+              fontSize: '17px', fontStyle: 'italic', fontWeight: 300,
+              color: '#555', lineHeight: 1.85, marginBottom: '32px',
+            }}>
+              {product.description}
+            </p>
+            <div style={{
+              display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '36px',
+            }}>
+              {product.originalPrice && (
+                <del style={{ fontFamily: "'Cinzel', serif", fontSize: '18px', color: '#bbb' }}>
+                  ₹{product.originalPrice.toLocaleString('en-IN')}
+                </del>
+              )}
+              <span style={{
+                fontFamily: "'Cinzel', serif", fontSize: '32px', fontWeight: 700,
+                color: 'var(--green)',
+              }}>
+                ₹{product.price.toLocaleString('en-IN')}
+              </span>
+              <span style={{ fontSize: '14px', color: '#999', fontStyle: 'italic' }}>/ {product.unit}</span>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <button style={{
+                fontFamily: "'Cinzel', serif", fontSize: '11px', letterSpacing: '3px',
+                background: 'linear-gradient(135deg, #1A5C2E, #2E7D46)',
+                color: '#fff', border: 'none', padding: '18px 44px', cursor: 'pointer',
+                textTransform: 'uppercase', fontWeight: 600, transition: 'all .4s',
+              }}>
+                Add to Cart — ₹{product.price.toLocaleString('en-IN')}
+              </button>
+              <button style={{
+                fontFamily: "'Cinzel', serif", fontSize: '11px', letterSpacing: '3px',
+                background: 'transparent', color: 'var(--gold)',
+                border: '1.5px solid var(--gold)', padding: '15px 44px', cursor: 'pointer',
+                textTransform: 'uppercase', transition: 'all .4s',
+              }}>
+                Add to Wishlist
+              </button>
+            </div>
+            <div style={{
+              marginTop: '36px', padding: '24px',
+              border: '1px solid rgba(201,168,76,0.2)',
+              background: 'rgba(255,255,255,0.7)',
+            }}>
+              <p style={{
+                fontFamily: "'Cinzel', serif", fontSize: '10px', letterSpacing: '3px',
+                color: 'var(--green)', textTransform: 'uppercase', marginBottom: '10px',
+              }}>
+                Sacred Promise
+              </p>
+              <p style={{ fontSize: '14px', fontStyle: 'italic', color: '#777', lineHeight: 1.7 }}>
+                Every item is hand-selected, energised and blessed by our Pandits. Your purchase directly funds the construction of the world's tallest Shiva temple and feeds one lakh souls daily.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer style={{
+        background: 'var(--obsidian)', color: '#fff',
+        borderTop: '2px solid var(--gold)',
+        padding: '40px 70px', textAlign: 'center',
+      }}>
+        <span style={{
+          fontFamily: "'Cinzel', serif", fontSize: '11px', letterSpacing: '4px',
+          color: 'rgba(201,168,76,.5)',
+        }}>
+          ॐ नमः शिवाय
+        </span>
+        <p style={{ fontSize: '13px', color: 'rgba(255,255,255,.3)', marginTop: '8px' }}>
+          © 2024 Divyaastra Foundation. All Rights Reserved.
+        </p>
+      </footer>
+    </>
+  )
 }
-
-const products: Array<Product> = [
-  {
-    id: 1,
-    name: 'Amethyst Healing Bracelet',
-    image: '/images/amethyst-bracelet.jpg',
-    description: 'Premium natural amethyst bracelet crafted from genuine 8mm crystal beads. Calms the mind, enhances intuition and offers spiritual protection. Ideal for meditation and daily wear.',
-    shortDescription: 'Premium natural amethyst bracelet crafted from genuine 8mm crystal beads.',
-    category: 'crystals-stones',
-    price: 1499,
-    badge: 'Best Seller',
-    unit: 'piece',
-  },
-  {
-    id: 2,
-    name: 'Rose Quartz Heart Pendant',
-    image: '/images/rose-quartz-pendant.jpg',
-    description: 'Natural rose quartz heart pendant on sterling silver chain. Opens the heart chakra and attracts unconditional love, compassion and emotional healing. Perfect for daily wear.',
-    shortDescription: 'Natural rose quartz heart pendant on sterling silver chain.',
-    category: 'crystals-stones',
-    price: 1299,
-    originalPrice: 1999,
-    badge: '35% OFF',
-    badgeColor: '#D4AF37',
-    unit: 'piece',
-  },
-  {
-    id: 3,
-    name: 'Crystal Radha Krishna Idol',
-    image: '/images/crystal-radha-krishna.jpg',
-    description: 'Handcrafted crystal Radha Krishna idol with premium detailing. Made from pure sphatik crystal. Radiates divine love and brings peace, harmony and spiritual blessings to your home.',
-    shortDescription: 'Handcrafted crystal Radha Krishna idol with premium sphatik detailing.',
-    category: 'idols-murthy',
-    price: 1999,
-    badge: 'New',
-    unit: 'idol',
-  },
-  {
-    id: 4,
-    name: 'Clear Quartz Crystal Tower',
-    image: '/images/clear-quartz-tower.jpg',
-    description: 'Natural clear quartz tower point for energy amplification and clarity. Master healer crystal that purifies space, amplifies intentions and balances all chakras. Premium grade specimen.',
-    shortDescription: 'Natural clear quartz tower for energy amplification and clarity.',
-    category: 'crystals-stones',
-    price: 1599,
-    badge: 'New',
-    unit: 'piece',
-  },
-  {
-    id: 5,
-    name: 'Black Tourmaline Protection Bracelet',
-    image: '/images/black-tourmaline-bracelet.jpg',
-    description: 'Genuine black tourmaline bracelet for powerful protection against negative energy, evil eye and psychic attacks. Grounds your energy and creates a protective shield around the aura.',
-    shortDescription: 'Genuine black tourmaline bracelet for powerful protection against negative energy.',
-    category: 'crystals-stones',
-    price: 1399,
-    originalPrice: 1999,
-    badge: '30% OFF',
-    badgeColor: '#2D5016',
-    unit: 'piece',
-  },
-  {
-    id: 6,
-    name: 'Citrine Abundance Bracelet',
-    image: '/images/citrine-bracelet.jpg',
-    description: 'Natural citrine bracelet — the stone of abundance and manifestation. Activates the solar plexus chakra for wealth, confidence and positive energy. Carry sunshine on your wrist.',
-    shortDescription: 'Natural citrine bracelet for wealth, confidence and positive energy.',
-    category: 'crystals-stones',
-    price: 1499,
-    originalPrice: 2199,
-    badge: '32% OFF',
-    badgeColor: '#D4AF37',
-    unit: 'piece',
-  },
-  {
-    id: 7,
-    name: 'Lapis Lazuli Pendant',
-    image: '/images/lapis-lazuli-pendant.jpg',
-    description: 'Royal lapis lazuli pendant with gold pyrite flecks on silver chain. Opens the third eye for wisdom, truth and spiritual insight. Worn by kings and seekers for centuries.',
-    shortDescription: 'Royal lapis lazuli pendant with gold pyrite flecks on silver chain.',
-    category: 'crystals-stones',
-    price: 1699,
-    originalPrice: 2499,
-    badge: '32% OFF',
-    badgeColor: '#2D5016',
-    unit: 'piece',
-  },
-  {
-    id: 8,
-    name: 'Green Aventurine Bracelet',
-    image: '/images/green-aventurine-bracelet.jpg',
-    description: 'Natural green aventurine bracelet — the stone of opportunity and luck. Attracts prosperity, good fortune and new opportunities. Soothes the heart chakra and brings emotional calm.',
-    shortDescription: 'Natural green aventurine bracelet for luck, prosperity and opportunity.',
-    category: 'crystals-stones',
-    price: 1299,
-    badge: 'Best Seller',
-    unit: 'piece',
-  },
-  {
-    id: 9,
-    name: 'Moonstone Pendant',
-    image: '/images/moonstone-pendant.jpg',
-    description: 'Iridescent rainbow moonstone pendant in sterling silver. Enhances intuition, emotional balance and feminine energy. Wear the divine light of the moon for inner wisdom.',
-    shortDescription: 'Iridescent rainbow moonstone pendant in sterling silver.',
-    category: 'crystals-stones',
-    price: 1799,
-    badge: 'New',
-    unit: 'piece',
-  },
-  {
-    id: 10,
-    name: 'Tiger Eye Confidence Bracelet',
-    image: '/images/tiger-eye-bracelet.jpg',
-    description: 'Genuine golden tiger eye bracelet for courage, willpower and confidence. Shields against negative energy and boosts mental clarity. The warrior stone for achievers.',
-    shortDescription: 'Genuine golden tiger eye bracelet for courage and confidence.',
-    category: 'crystals-stones',
-    price: 1399,
-    originalPrice: 1999,
-    badge: '30% OFF',
-    badgeColor: '#D4AF37',
-    unit: 'piece',
-  },
-  {
-    id: 11,
-    name: 'Sphatik Crystal Shivling',
-    image: '/images/crystal-shivling.jpg',
-    description: 'Pure natural sphatik (clear quartz) Shivling for daily Shiva worship and abhishek. Crystal shivlings are considered the most powerful form for Rudra puja. Energised and consecrated.',
-    shortDescription: 'Pure natural sphatik crystal Shivling for daily Shiva worship.',
-    category: 'idols-murthy',
-    price: 1999,
-    badge: 'Premium',
-    unit: 'piece',
-  },
-  {
-    id: 12,
-    name: 'Crystal Ganesha Idol',
-    image: '/images/crystal-ganesha.jpg',
-    description: 'Handcrafted clear crystal Lord Ganesha idol. Vighnaharta who removes all obstacles and blesses new beginnings. Premium crystal with intricate detailing. Ideal for home and office.',
-    shortDescription: 'Handcrafted clear crystal Lord Ganesha idol for blessings and new beginnings.',
-    category: 'idols-murthy',
-    price: 1899,
-    originalPrice: 2699,
-    badge: '30% OFF',
-    badgeColor: '#D4AF37',
-    unit: 'idol',
-  },
-  {
-    id: 13,
-    name: 'Crystal Lakshmi Idol',
-    image: '/images/crystal-lakshmi.jpg',
-    description: 'Exquisite crystal Goddess Lakshmi idol radiating divine prosperity and abundance. Handcrafted from premium crystal with fine detailing. Invites Shree and wealth into your home.',
-    shortDescription: 'Exquisite crystal Goddess Lakshmi idol for prosperity and abundance.',
-    category: 'idols-murthy',
-    price: 1999,
-    originalPrice: 2799,
-    badge: '29% OFF',
-    badgeColor: '#D4AF37',
-    unit: 'idol',
-  },
-  {
-    id: 14,
-    name: 'Amethyst Crystal Tree',
-    image: '/images/amethyst-tree.jpg',
-    description: 'Handcrafted amethyst crystal tree with natural stone chips on a copper wire base. Place in your home for spiritual protection, calm energy and Vastu harmony. A premium decor piece.',
-    shortDescription: 'Handcrafted amethyst crystal tree for spiritual protection and calm energy.',
-    category: 'crystals-stones',
-    price: 1599,
-    badge: 'Best Seller',
-    unit: 'piece',
-  },
-  {
-    id: 15,
-    name: 'Rose Quartz Crystal Tree',
-    image: '/images/rose-quartz-tree.jpg',
-    description: 'Beautiful rose quartz crystal tree with genuine stone chips on copper wire base. Fills your space with loving, compassionate energy. Attracts love, harmony and positive relationships.',
-    shortDescription: 'Beautiful rose quartz crystal tree for love, harmony and positive energy.',
-    category: 'crystals-stones',
-    price: 1499,
-    originalPrice: 2199,
-    badge: '32% OFF',
-    badgeColor: '#2D5016',
-    unit: 'piece',
-  },
-  {
-    id: 16,
-    name: 'Seven Chakra Crystal Pyramid',
-    image: '/images/chakra-pyramid.jpg',
-    description: 'Premium seven chakra crystal pyramid with genuine gemstone layers. Balances all seven chakras, removes energy blockages and harmonises your space. Ideal for meditation and Vastu.',
-    shortDescription: 'Premium seven chakra crystal pyramid for energy balance and Vastu harmony.',
-    category: 'crystals-stones',
-    price: 1699,
-    originalPrice: 2499,
-    badge: '32% OFF',
-    badgeColor: '#D4AF37',
-    unit: 'piece',
-  },
-  {
-    id: 17,
-    name: 'Amethyst Crystal Sphere',
-    image: '/images/amethyst-sphere.jpg',
-    description: 'Natural polished amethyst sphere on brass stand. Radiates protective and calming energy in all directions. Enhances meditation, psychic ability and deep spiritual connection.',
-    shortDescription: 'Natural polished amethyst sphere for protection and spiritual energy.',
-    category: 'crystals-stones',
-    price: 1799,
-    badge: 'Premium',
-    unit: 'piece',
-  },
-  {
-    id: 18,
-    name: 'Rose Quartz Sphere',
-    image: '/images/rose-quartz-sphere.jpg',
-    description: 'Premium polished rose quartz sphere on brass stand. Emits unconditional love energy in all directions. Opens the heart chakra and transforms emotional wounds into grace.',
-    shortDescription: 'Premium polished rose quartz sphere for unconditional love energy.',
-    category: 'crystals-stones',
-    price: 1599,
-    originalPrice: 2399,
-    badge: '33% OFF',
-    badgeColor: '#D4AF37',
-    unit: 'piece',
-  },
-  {
-    id: 19,
-    name: 'Clear Quartz Crystal Sphere',
-    image: '/images/clear-quartz-sphere.jpg',
-    description: 'Premium natural clear quartz sphere — the master healer. Amplifies all energies, purifies the environment and brings mental clarity. A centrepiece for any crystal collection.',
-    shortDescription: 'Premium natural clear quartz sphere — the master healing crystal.',
-    category: 'crystals-stones',
-    price: 1699,
-    badge: 'New',
-    unit: 'piece',
-  },
-  {
-    id: 20,
-    name: 'Sphatik Crystal Mala — 108',
-    image: '/images/sphatik-mala.jpg',
-    description: 'Natural Himalayan sphatik (clear quartz) mala of 108 beads. The most powerful mala for mantra chanting. Amplifies all prayers and intentions. Consecrated and energised.',
-    shortDescription: 'Natural Himalayan sphatik crystal mala of 108 beads for mantra chanting.',
-    category: 'malas-accessories',
-    price: 1999,
-    badge: 'Best Seller',
-    unit: 'mala',
-  },
-  {
-    id: 21,
-    name: 'Amethyst Crystal Mala — 108',
-    image: '/images/amethyst-mala.jpg',
-    description: 'Premium amethyst 108 bead mala for meditation, japa and spiritual healing. Each bead carries calming, protective energy. Ideal for Devi mantras and mindfulness practice.',
-    shortDescription: 'Premium amethyst 108 bead mala for meditation and spiritual healing.',
-    category: 'malas-accessories',
-    price: 1799,
-    originalPrice: 2499,
-    badge: '28% OFF',
-    badgeColor: '#2D5016',
-    unit: 'mala',
-  },
-  {
-    id: 22,
-    name: 'Labradorite Bracelet',
-    image: '/images/labradorite-bracelet.jpg',
-    description: 'Genuine labradorite bracelet with mesmerising aurora flash. The stone of transformation and magic. Strengthens intuition, reveals hidden truths and protects the aura.',
-    shortDescription: 'Genuine labradorite bracelet for transformation and intuition.',
-    category: 'crystals-stones',
-    price: 1599,
-    badge: 'New',
-    unit: 'piece',
-  },
-  {
-    id: 23,
-    name: 'Sodalite Bracelet',
-    image: '/images/sodalite-bracelet.jpg',
-    description: 'Natural sodalite bracelet in deep royal blue. Enhances communication, rational thinking and inner truth. Activates the throat chakra for clear expression and self-confidence.',
-    shortDescription: 'Natural sodalite bracelet for communication and inner truth.',
-    category: 'crystals-stones',
-    price: 1299,
-    originalPrice: 1899,
-    badge: '32% OFF',
-    badgeColor: '#D4AF37',
-    unit: 'piece',
-  },
-  {
-    id: 24,
-    name: 'Obsidian Protection Bracelet',
-    image: '/images/obsidian-bracelet.jpg',
-    description: 'Powerful black obsidian bracelet for deep protection and grounding. Absorbs and dissolves negative energy, trauma and psychic pollution. A shield of volcanic strength.',
-    shortDescription: 'Powerful black obsidian bracelet for deep protection and grounding.',
-    category: 'crystals-stones',
-    price: 1399,
-    badge: 'Best Seller',
-    unit: 'piece',
-  },
-  {
-    id: 25,
-    name: 'Carnelian Energy Bracelet',
-    image: '/images/carnelian-bracelet.jpg',
-    description: 'Vibrant natural carnelian bracelet for vitality, passion and motivation. Activates the sacral chakra for creativity, courage and physical energy. The stone of bold action.',
-    shortDescription: 'Natural carnelian bracelet for vitality, creativity and motivation.',
-    category: 'crystals-stones',
-    price: 1299,
-    originalPrice: 1899,
-    badge: '32% OFF',
-    badgeColor: '#2D5016',
-    unit: 'piece',
-  },
-  {
-    id: 26,
-    name: 'Pyrite Wealth Bracelet',
-    image: '/images/pyrite-bracelet.jpg',
-    description: 'Natural pyrite bracelet — Fool\'s Gold that attracts real wealth. Activates the solar plexus for confidence, abundance and financial success. The businessman\'s crystal.',
-    shortDescription: 'Natural pyrite bracelet for wealth, confidence and financial success.',
-    category: 'crystals-stones',
-    price: 1499,
-    badge: 'Best Seller',
-    unit: 'piece',
-  },
-  {
-    id: 27,
-    name: 'Hematite Grounding Bracelet',
-    image: '/images/hematite-bracelet.jpg',
-    description: 'Genuine hematite bracelet for deep grounding, focus and mental clarity. Balances root chakra, reduces anxiety and keeps you centred. Strong protective energy for daily wear.',
-    shortDescription: 'Genuine hematite bracelet for grounding, focus and mental clarity.',
-    category: 'crystals-stones',
-    price: 1200,
-    originalPrice: 1799,
-    badge: '33% OFF',
-    badgeColor: '#D4AF37',
-    unit: 'piece',
-  },
-  {
-    id: 28,
-    name: 'Sunstone Bracelet',
-    image: '/images/sunstone-bracelet.jpg',
-    description: 'Radiant natural sunstone bracelet for joy, positivity and personal power. Clears chakra blockages, boosts leadership energy and fills your aura with solar light and optimism.',
-    shortDescription: 'Natural sunstone bracelet for joy, positivity and personal power.',
-    category: 'crystals-stones',
-    price: 1599,
-    badge: 'New',
-    unit: 'piece',
-  },
-  {
-    id: 29,
-    name: 'Aquamarine Crystal Pendant',
-    image: '/images/aquamarine-pendant.jpg',
-    description: 'Natural aquamarine pendant in silver. The stone of courage and communication. Calms the mind, reduces fear and brings clarity of expression. Sacred to sea and sky.',
-    shortDescription: 'Natural aquamarine pendant for courage, clarity and calm communication.',
-    category: 'crystals-stones',
-    price: 1799,
-    originalPrice: 2599,
-    badge: '31% OFF',
-    badgeColor: '#2D5016',
-    unit: 'piece',
-  },
-  {
-    id: 30,
-    name: 'Crystal Shiva Idol',
-    image: '/images/crystal-shiva.jpg',
-    description: 'Handcrafted crystal Lord Shiva idol in meditating pose. Premium quality crystal with fine artisan detailing. Brings peace, transformation and divine Shiva energy into your sacred space.',
-    shortDescription: 'Handcrafted crystal Lord Shiva idol for peace and divine energy.',
-    category: 'idols-murthy',
-    price: 1999,
-    badge: 'Premium',
-    unit: 'idol',
-  },
-  {
-    id: 31,
-    name: 'Selenite Healing Wand',
-    image: '/images/selenite-wand.jpg',
-    description: 'Natural selenite crystal wand for energy cleansing and chakra alignment. The only crystal that never needs cleansing. Clears negative energy from other crystals, spaces and auras.',
-    shortDescription: 'Natural selenite wand for energy cleansing and chakra alignment.',
-    category: 'crystals-stones',
-    price: 1399,
-    badge: 'New',
-    unit: 'piece',
-  },
-  {
-    id: 32,
-    name: 'Rainbow Fluorite Tower',
-    image: '/images/fluorite-tower.jpg',
-    description: 'Natural rainbow fluorite tower with stunning colour bands. Promotes mental clarity, focus and spiritual growth. Absorbs negative energy and harmonises the mind. A scholar\'s stone.',
-    shortDescription: 'Natural rainbow fluorite tower for mental clarity and spiritual growth.',
-    category: 'crystals-stones',
-    price: 1499,
-    originalPrice: 2199,
-    badge: '32% OFF',
-    badgeColor: '#D4AF37',
-    unit: 'piece',
-  },
-  {
-    id: 33,
-    name: 'Seven Chakra Healing Bracelet',
-    image: '/images/chakra-bracelet.jpg',
-    description: 'Premium seven chakra bracelet with seven genuine gemstones — one for each chakra. Balances the entire energy system for physical, emotional and spiritual wellbeing. Most complete healing tool.',
-    shortDescription: 'Premium seven chakra bracelet with genuine gemstones for complete healing.',
-    category: 'malas-accessories',
-    price: 1599,
-    badge: 'Best Seller',
-    unit: 'piece',
-  },
-  {
-    id: 34,
-    name: 'Rudraksha Crystal Combination Mala',
-    image: '/images/rudraksha-crystal-mala.jpg',
-    description: '108 bead mala combining 5-mukhi Rudraksha and sphatik crystal beads. Unites the power of Shiva and pure cosmic energy. Energised for mantra japa and spiritual protection.',
-    shortDescription: '108 bead mala combining Rudraksha and sphatik crystal for maximum power.',
-    category: 'malas-accessories',
-    price: 1999,
-    badge: 'Premium',
-    unit: 'mala',
-  },
-  {
-    id: 35,
-    name: 'Crystal Healing Gift Set',
-    image: '/images/crystal-gift-set.jpg',
-    description: 'Premium crystal healing gift set with 7 hand-selected crystals — amethyst, rose quartz, black tourmaline, citrine, clear quartz, tiger eye and lapis lazuli. Comes in a luxury velvet box.',
-    shortDescription: 'Premium 7-crystal healing gift set in luxury velvet box.',
-    category: 'heritage-vault',
-    price: 1999,
-    badge: 'Best Seller',
-    unit: 'set',
-  },
-  {
-    id: 36,
-    name: 'Navratna Crystal Bracelet',
-    image: '/images/navratna-bracelet.jpg',
-    description: 'Nine sacred planetary gemstones in one premium bracelet. Each stone corresponds to a Navagraha planet for complete astrological balance and protection. The ultimate astrological remedy.',
-    shortDescription: 'Nine sacred planetary gemstones for complete astrological balance.',
-    category: 'heritage-vault',
-    price: 1999,
-    badge: 'Premium',
-    unit: 'piece',
-  },
-  {
-    id: 37,
-    name: 'Crystal Orgone Pyramid',
-    image: '/images/orgone-pyramid.jpg',
-    description: 'Handcrafted orgone crystal pyramid with amethyst, citrine and black tourmaline layers in resin. Converts negative orgone energy into positive life force. Protects from EMF and restores harmony.',
-    shortDescription: 'Handcrafted orgone crystal pyramid for positive energy and EMF protection.',
-    category: 'heritage-vault',
-    price: 1799,
-    originalPrice: 2599,
-    badge: '31% OFF',
-    badgeColor: '#D4AF37',
-    unit: 'piece',
-  },
-  {
-    id: 38,
-    name: 'Red Garnet Bracelet',
-    image: '/images/garnet-bracelet.jpg',
-    description: 'Natural deep red garnet bracelet for passion, energy and manifestation. Activates the root chakra for vitality, love and abundance. The stone of commitment and devotion.',
-    shortDescription: 'Natural red garnet bracelet for passion, vitality and manifestation.',
-    category: 'crystals-stones',
-    price: 1699,
-    originalPrice: 2399,
-    badge: '29% OFF',
-    badgeColor: '#2D5016',
-    unit: 'piece',
-  },
-]
-
-export default products

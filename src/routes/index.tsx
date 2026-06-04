@@ -97,7 +97,7 @@ function DivyaastraHome() {
           <li><a href="#vault">Heritage Vault</a></li>
           <li><a href="#foundation">Foundation</a></li>
         </ul>
-        <button className="nav-cta">Support Temple</button>
+        <a href="#foundation" className="nav-cta">Support Temple</a>
       </nav>
 
       {/* HERO */}
@@ -121,8 +121,8 @@ function DivyaastraHome() {
             <span className="hstat-label">Meals Daily</span>
           </div>
           <div className="hstat">
-            <span className="hstat-num">108</span>
-            <span className="hstat-label">Sacred Products</span>
+            <span className="hstat-num">{products.length}</span>
+            <span className="hstat-label">Sacred Products Live</span>
           </div>
           <div className="hstat">
             <span className="hstat-num">5,000</span>
@@ -658,7 +658,7 @@ function DivyaastraHome() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span className="footer-copy">© 2024 Divyaastra Foundation. All Rights Reserved. Section 8 Company. FCRA Eligible. Tax-Exempt Donations.</span>
+          <span className="footer-copy">© 2026 Divyaastra Foundation. All Rights Reserved. Section 8 Company. FCRA Eligible. Tax-Exempt Donations.</span>
           <span className="footer-reg">ॐ नमः शिवाय</span>
         </div>
       </footer>

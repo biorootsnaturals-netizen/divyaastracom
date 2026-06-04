@@ -61,6 +61,8 @@ nav {
   background: linear-gradient(135deg, #1A5C2E, #2E7D46);
   color: #fff; border: none; padding: 10px 26px; cursor: pointer;
   text-transform: uppercase; transition: all .3s;
+  text-decoration: none;
+  display: inline-flex; align-items: center; justify-content: center;
 }
 .nav-cta:hover { background: linear-gradient(135deg, #2E7D46, #1A5C2E); transform: translateY(-1px); }
 

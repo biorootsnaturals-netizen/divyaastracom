@@ -97,7 +97,7 @@ function DivyaastraHome() {
           <li><a href="#vault">Heritage Vault</a></li>
           <li><a href="#foundation">Foundation</a></li>
         </ul>
-        <button className="nav-cta">Support Temple</button>
+        <a href="#foundation" className="nav-cta">Support Temple</a>
       </nav>
 
       {/* HERO */}
@@ -121,8 +121,8 @@ function DivyaastraHome() {
             <span className="hstat-label">Meals Daily</span>
           </div>
           <div className="hstat">
-            <span className="hstat-num">108</span>
-            <span className="hstat-label">Sacred Products</span>
+            <span className="hstat-num">{products.length}</span>
+            <span className="hstat-label">Sacred Products Live</span>
           </div>
           <div className="hstat">
             <span className="hstat-num">5,000</span>

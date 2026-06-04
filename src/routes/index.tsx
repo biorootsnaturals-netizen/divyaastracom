@@ -661,6 +661,9 @@ function DivyaastraHome() {
           <span className="footer-copy">© 2024 Divyaastra Foundation. All Rights Reserved. Section 8 Company. FCRA Eligible. Tax-Exempt Donations.</span>
           <span className="footer-reg">ॐ नमः शिवाय</span>
         </div>
+        <div className="footer-disclaimer">
+          <p>The temple project presented on this website is a conceptual future development and does not constitute a solicitation for donations, investments, or public contributions. No donations, crowdfunding contributions, memberships, or financial commitments are being requested or accepted at this time. Currently, only the products listed in the store are available for purchase. Any future developments regarding the temple project will be officially announced through this website.</p>
+        </div>
       </footer>
     </>
   )

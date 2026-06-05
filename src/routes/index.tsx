@@ -657,7 +657,19 @@ function DivyaastraHome() {
             </ul>
           </div>
         </div>
-        <div className="footer-bottom">
+        <div className="footer-bottom"> <div
+  style={{
+    textAlign: 'center',
+    padding: '15px',
+    fontSize: '14px',
+    color: '#999999',
+    borderTop: '1px solid rgba(255,255,255,0.1)',
+    marginTop: '20px',
+    lineHeight: '1.6'
+  }}
+>
+  <strong>Temple Project Notice:</strong> The proposed Divyaastra Temple is a future visionary project currently in the conceptual and planning stage. Information presented on this website is for informational purposes only. No donations, investments, memberships, crowdfunding contributions, or public financial support are currently being requested or accepted for temple construction.
+</div>
           <span className="footer-copy">© 2026 Divyaastra Foundation. All Rights Reserved. Section 8 Company. FCRA Eligible. Tax-Exempt Donations.</span>
           <span className="footer-reg">ॐ नमः शिवाय</span>
         </div>

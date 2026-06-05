@@ -658,7 +658,7 @@ function DivyaastraHome() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span className="footer-copy">© 2024 Divyaastra Foundation. All Rights Reserved. Section 8 Company. FCRA Eligible. Tax-Exempt Donations.</span>
+          <span className="footer-copy">© 2026 Divyaastra Foundation. All Rights Reserved. Section 8 Company. FCRA Eligible. Tax-Exempt Donations.</span>
           <span className="footer-reg">ॐ नमः शिवाय</span>
         </div>
       </footer>

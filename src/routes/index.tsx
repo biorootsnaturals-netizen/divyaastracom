@@ -217,9 +217,11 @@ function DivyaastraHome() {
       {/* MISSION */}
       <section id="mission" className="section">
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div className="section-eyebrow reveal" style={{ textAlign: 'center' }}>Our Sacred Purpose</div>
+          <div className="section-eyebrow reveal" style={{ textAlign: 'center' }}><span style={{ color: '#D4AF37' }}>Our Sacred Purpose</span>
+</div>
           <h2 className="section-title reveal" style={{ textAlign: 'center', margin: '0 auto 16px' }}>
-            The Divyaastra Mission
+            <span style={{ color: '#D4AF37' }}>The Divyaastra Mission</span>
+
           </h2>
           <p className="section-body reveal" style={{ margin: '0 auto 0', textAlign: 'center' }}>
             We are not merely a store. We are a movement — to restore Dharma, rebuild ancient glory, and serve every soul.

@@ -659,13 +659,6 @@ function DivyaastraHome() {
           +1 (609) 919-1212
         </a>
       </p>
-
-      <p><strong>📍 Mailing & Physical Address</strong><br />
-112 N Main Street<br />
-Robbinsville, NJ 08561<br />
-United States
-</p>
-
 <p>
 <strong>📍 Australia Office</strong><br />
 42 Station Road<br />

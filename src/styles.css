@@ -509,10 +509,24 @@ footer {
   .hero-btns .btn-green, .hero-btns .btn-gold-outline { flex: 1 1 100%; padding: 14px 24px; }
 }/* ===== Responsive Hero Title ===== */
 
-.hero-title {
-    font-size: clamp(34px, 8vw, 66px);
-    line-height: 0.95;
-    letter-spacing: -1px;
-    text-wrap: balance;
-    overflow-wrap: break-word;
+@media (max-width: 768px) {
+    .nav {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .nav-brand {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-cta {
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto;
+    }
 }

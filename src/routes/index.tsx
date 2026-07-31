@@ -680,9 +680,18 @@ India
 </p>
 
 <p>
-<strong>☎ Phone</strong><br />
-...
-        <strong>✉ Email</strong><br />
+  <strong>☎ Phone</strong><br />
+  <a href="tel:+911266000000">
+    +91 126 600 0000
+  </a>
+</p>
+
+<p>
+  <strong>✉ Email</strong><br />
+  <a href="mailto:info@divyaastra.com">
+    info@divyaastra.com
+  </a>
+</p>
         <a href="mailto:info@divyaastra.com">
           info@divyaastra.com
         </a>

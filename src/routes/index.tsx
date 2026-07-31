@@ -660,7 +660,35 @@ function DivyaastraHome() {
         </a>
       </p>
 
-      <p>
+      <p><strong>📍 Mailing & Physical Address</strong><br />
+112 N Main Street<br />
+Robbinsville, NJ 08561<br />
+United States
+</p>
+
+<p>
+<strong>📍 Australia Office</strong><br />
+42 Station Road<br />
+Seven Hills, NSW 2147<br />
+Australia
+</p>
+
+<p>
+<strong>☎ Phone</strong><br />
+<a href="tel:+61296263133">+61 2 9626 3133</a>
+</p>
+
+<p>
+<strong>📍 India Office</strong><br />
+The Camellias<br />
+DLF Golf Links, DLF Phase 5, Sector 42<br />
+Gurugram, Haryana 122009<br />
+India
+</p>
+
+<p>
+<strong>☎ Phone</strong><br />
+...
         <strong>✉ Email</strong><br />
         <a href="mailto:info@divyaastra.com">
           info@divyaastra.com

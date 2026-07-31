@@ -117,8 +117,8 @@ nav {
 }
 .hero-title {
   font-family: 'Cinzel Decorative', serif;
-  font-size: clamp(52px, 9vw, 108px);
-  font-weight: 900; line-height: .95; letter-spacing: 6px;
+  font-size: clamp(30px, calc(7px + 8.4vw), 108px);
+  font-weight: 900; line-height: .95; letter-spacing: clamp(2px, 1.2vw, 6px);
   background: linear-gradient(160deg, #7A5C10 0%, #C9A84C 25%, #F0C040 45%, #EDD98A 55%, #F0C040 65%, #C9A84C 80%, #7A5C10 100%);
   background-size: 200% auto;
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;

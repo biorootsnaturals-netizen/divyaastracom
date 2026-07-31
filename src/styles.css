@@ -56,6 +56,9 @@ nav {
   color: #555; text-decoration: none; text-transform: uppercase; transition: color .3s;
 }
 .nav-links a:hover { color: var(--green); }
+.nav-links a[href="#contact"] {
+    color: var(--green);
+}
 .nav-cta {
   font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 2px;
   background: linear-gradient(135deg, #1A5C2E, #2E7D46);

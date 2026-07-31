@@ -633,10 +633,10 @@ function DivyaastraHome() {
     <h2
   className="hero-title"
   style={{
-    fontSize: "66px",
-    color: "#D4AF37"
+    color: "#D4AF37""
   }}
 >
+ <h2 className="hero-title">
   Contact Us
 </h2>
 
@@ -659,9 +659,39 @@ function DivyaastraHome() {
           +1 (609) 919-1212
         </a>
       </p>
+<p>
+<strong>📍 Australia Office</strong><br />
+42 Station Road<br />
+Seven Hills, NSW 2147<br />
+Australia
+</p>
 
-      <p>
-        <strong>✉ Email</strong><br />
+<p>
+<strong>☎ Phone</strong><br />
+<a href="tel:+61296263133">+61 2 9626 3133</a>
+</p>
+
+<p>
+<strong>📍 India Office</strong><br />
+The Camellias<br />
+DLF Golf Links, DLF Phase 5, Sector 42<br />
+Gurugram, Haryana 122009<br />
+India
+</p>
+
+<p>
+  <strong>☎ Phone</strong><br />
+  <a href="tel:+911266000000">
+    +91 126 600 0000
+  </a>
+</p>
+
+<p>
+  <strong>✉ Email</strong><br />
+  <a href="mailto:info@divyaastra.com">
+    info@divyaastra.com
+  </a>
+</p>
         <a href="mailto:info@divyaastra.com">
           info@divyaastra.com
         </a>

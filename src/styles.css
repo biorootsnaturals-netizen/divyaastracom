@@ -56,6 +56,9 @@ nav {
   color: #555; text-decoration: none; text-transform: uppercase; transition: color .3s;
 }
 .nav-links a:hover { color: var(--green); }
+.nav-links a[href="#contact"] {
+    color: var(--green);
+}
 .nav-cta {
   font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 2px;
   background: linear-gradient(135deg, #1A5C2E, #2E7D46);
@@ -509,10 +512,24 @@ footer {
   .hero-btns .btn-green, .hero-btns .btn-gold-outline { flex: 1 1 100%; padding: 14px 24px; }
 }/* ===== Responsive Hero Title ===== */
 
-.hero-title {
-    font-size: clamp(32px, 10vw, 66px);
-    line-height: 0.95;
-    text-align: center;
-    width: 100%;
-    max-width: 100%;
+@media (max-width: 768px) {
+    .nav {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .nav-brand {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-cta {
+        width: 100%;
+        max-width: 260px;
+        margin: 0 auto;
+    }
 }

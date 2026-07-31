@@ -633,10 +633,10 @@ function DivyaastraHome() {
     <h2
   className="hero-title"
   style={{
-    fontSize: "36px",
-    color: "#D4AF37"
+    color: "#D4AF37""
   }}
 >
+ <h2 className="hero-title">
   Contact Us
 </h2>
 

@@ -96,7 +96,7 @@ function DivyaastraHome() {
           <li><a href="#food-mission">Annadaan</a></li>
           <li><a href="#vault">Heritage Vault</a></li>
           <li><a href="#foundation">Foundation</a></li>
-        </ul>
+        </ul><li><a href="#contact">Contact Us</a></li>
         <button className="nav-cta">Support Temple</button>
       </nav>
 
@@ -113,7 +113,8 @@ function DivyaastraHome() {
 
         <div className="hero-stats-bar">
           <div className="hstat">
-            <span className="hstat-num">501 ft</span>
+            <span className="hstat-num">1110
+              ft</span>
             <span className="hstat-label">Temple Height</span>
           </div>
           <div className="hstat">
@@ -230,7 +231,7 @@ function DivyaastraHome() {
             <div className="mission-card reveal">
               <span className="mission-icon">🕉️</span>
               <div className="mission-title">World's Tallest Shiva Temple</div>
-              <p className="mission-body">A 501-foot monument to Mahadev — the tallest temple ever built. Housing all 12 Jyotirlingas, sacred to every Hindu on earth. Your purchase builds this eternal legacy.</p>
+              <p className="mission-body">A 1110-ft monument to Mahadev — the tallest temple ever built. Housing all 12 Jyotirlingas, sacred to every Hindu on earth. Your purchase builds this eternal legacy.</p>
             </div>
             <div className="mission-card reveal">
               <span className="mission-icon">🍛</span>
@@ -254,10 +255,10 @@ function DivyaastraHome() {
           <div>
             <div className="section-eyebrow reveal">Temple Architecture</div>
             <h2 className="section-title reveal title-green">Shri Mahadev<br />Shiv Parvati Dham</h2>
-            <p className="section-body reveal">The architectural vision of the century. Rising 501 feet above the sacred earth, housing all 12 Jyotirlingas, with a Kailash summit visible from 100 kilometres. Designed to stand for 10,000 years.</p>
+            <p className="section-body reveal">The architectural vision of the century. Rising 1110 feet above the sacred earth, housing all 12 Jyotirlingas, with a Kailash summit visible from 100 kilometres. Designed to stand for 10,000 years.</p>
             <div className="interior-stats">
               <div className="istat reveal">
-                <span className="istat-num">501 ft</span>
+                <span className="istat-num">1110 ft</span>
                 <span className="istat-label">Towering Height</span>
               </div>
               <div className="istat reveal">
@@ -277,7 +278,7 @@ function DivyaastraHome() {
           <div className="interior-visual reveal">
             <img
               src="/images/temple-architecture.jpg"
-              alt="Shri Mahadev Shiv Parvati Dham — 501 ft Temple Architecture"
+              alt="Shri Mahadev Shiv Parvati Dham — 1110 ft Temple Architecture"
               loading="lazy"
               decoding="async"
             />
@@ -624,6 +625,46 @@ function DivyaastraHome() {
         </div>
       </section>
 
+<section id="contact" className="section">
+  <div className="container" style={{ textAlign: "center", padding: "80px 20px" }}>
+
+    <span className="hero-eyebrow">GET IN TOUCH</span>
+
+    <h2 className="hero-title">Contact Us</h2>
+
+    <p className="hero-tagline">
+      We'd love to hear from you. Reach out to the Divyaastra Foundation.
+    </p>
+
+    <div style={{ maxWidth: "700px", margin: "40px auto", lineHeight: "2", fontSize: "18px" }}>
+
+      <p>
+        <strong>📍 Mailing & Physical Address</strong><br />
+        112 N Main Street<br />
+        Robbinsville, NJ 08561<br />
+        United States
+      </p>
+
+      <p>
+        <strong>☎ Phone</strong><br />
+        <a href="tel:+16099191212">
+          +1 (609) 919-1212
+        </a>
+      </p>
+
+      <p>
+        <strong>✉ Email</strong><br />
+        <a href="mailto:info@divyaastra.com">
+          info@divyaastra.com
+        </a>
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+      
       {/* FOOTER */}
       <footer>
         <div className="footer-top">

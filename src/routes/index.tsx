@@ -647,33 +647,31 @@ function DivyaastraHome() {
     <div style={{ maxWidth: "700px", margin: "40px auto", lineHeight: "2", fontSize: "18px" }}>
 
       <p>
-    <p>
-<strong>📍 United States Office</strong><br />112 N Main Street, Robbinsville, NJ 08561, United States
-</p>
+          <strong>📍 United States Office</strong><br />112 N Main Street, Robbinsville, NJ 08561, United States
+        </p>
 
-<p>
-<strong>☎ Phone</strong><br />
-<a href="tel:+16099191212">+1 (609) 919-1212</a>
-</p>
+        <p>
+          <strong>☎ Phone</strong><br />
+          <a href="tel:+16099191212">+1 (609) 919-1212</a>
+        </p>
 
-<p>
-<strong>📍 Australia Office</strong><br />42 Station Road, Seven Hills, NSW 2147, Australia
-</p>
+        <p>
+          <strong>📍 Australia Office</strong><br />42 Station Road, Seven Hills, NSW 2147, Australia
+        </p>
 
-<p>
-<strong>☎ Phone</strong><br />
-<a href="tel:+61296263133">+61 2 9626 3133</a>
-</p>
+        <p>
+          <strong>☎ Phone</strong><br />
+          <a href="tel:+61296263133">+61 2 9626 3133</a>
+        </p>
 
-<p>
-<strong>📍 India Office</strong><br />The Camellias, DLF Golf Links, DLF Phase 5, Sector 42, Gurugram, Haryana 122009, India
-</p>
+        <p>
+          <strong>📍 India Office</strong><br />The Camellias, DLF Golf Links, DLF Phase 5, Sector 42, Gurugram, Haryana 122009, India
+        </p>
 
-<p>
-<strong>✉ Email</strong><br />
-<a href="mailto:info@divyaastra.com">info@divyaastra.com</a>
-</p>
-
+        <p>
+          <strong>✉ Email</strong><br />
+          <a href="mailto:info@divyaastra.com">info@divyaastra.com</a>
+        </p>
 
 
 

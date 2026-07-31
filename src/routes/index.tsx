@@ -630,7 +630,15 @@ function DivyaastraHome() {
 
     <span className="hero-eyebrow">GET IN TOUCH</span>
 
-    <h2 className="hero-title">Contact Us</h2>
+    <h2
+  className="hero-title"
+  style={{
+    fontSize: "66px",
+    color: "#D4AF37"
+  }}
+>
+  Contact Us
+</h2>
 
     <p className="hero-tagline">
       We'd love to hear from you. Reach out to the Divyaastra Foundation.

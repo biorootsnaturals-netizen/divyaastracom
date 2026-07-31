@@ -145,7 +145,7 @@ function DivyaastraHome() {
       <section className="vision-showcase">
         <div className="vision-showcase-frame reveal">
           <video
-            src="/videos/divyaastra-vision-anime.mp4"
+            src="/videos/divyaastra-vision-final.mp4"
             poster="/images/temple-architecture.jpg"
             autoPlay
             loop

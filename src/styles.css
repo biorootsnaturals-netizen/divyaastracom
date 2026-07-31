@@ -510,5 +510,9 @@ footer {
 }/* ===== Responsive Hero Title ===== */
 
 .hero-title {
-    font-size: clamp(32px, 6vw, 66px);
+    font-size: clamp(32px, 10vw, 66px);
+    line-height: 0.95;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
 }

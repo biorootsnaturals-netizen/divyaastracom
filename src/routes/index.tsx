@@ -109,18 +109,18 @@ function DivyaastraHome() {
         </ul><li className="nav-contact">
   <a
     href="#contact"
-    style={{
-      color: "#16a34a",
-      fontWeight: 900,
-      fontSize: "18px"
-    }}
-  >
-    Contact Us
-  </a>
-</li>
-        <button className="nav-cta">Support Temple</button>
-        <button
-          type="button"
+   112  style={{
+113    color: "#16a34a",
+114    fontWeight: 900,
+115    fontSize: "18px",
+116    textDecoration: "underline",
+117    textDecorationThickness: "2px",
+118    textUnderlineOffset: "5px"
+119  }}
+120  >
+121    Contact Us
+122  </a>
+123  </li>
           className="nav-toggle"
           aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-expanded={menuOpen}

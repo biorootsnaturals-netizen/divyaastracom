@@ -106,7 +106,18 @@ function DivyaastraHome() {
           <li><a href="#food-mission">Annadaan</a></li>
           <li><a href="#experiences">Experiences</a></li>
           <li><a href="#foundation">Foundation</a></li>
-        </ul><li className="nav-contact"><a href="#contact">Contact Us</a></li>
+        </ul><li className="nav-contact">
+  <a
+    href="#contact"
+    style={{
+      color: "#16a34a",
+      fontWeight: 700,
+      fontSize: "16px"
+    }}
+  >
+    Contact Us
+  </a>
+</li>
         <button className="nav-cta">Support Temple</button>
         <button
           type="button"
@@ -415,7 +426,7 @@ function DivyaastraHome() {
               <div className="ngo-impact-bar reveal">
                 <div className="nib"><span className="nib-num">1L/day</span><span className="nib-label">Fed Daily</span></div>
                 <div className="nib"><span className="nib-num">5,000</span><span className="nib-label">Animals Cared</span></div>
-                <div className="nib"><span className="nib-num">500</span><span className="nib-label">Free Hospital Beds</span></div>
+                <div className="nib"><span className="nib-num">3,000</span><span className="nib-label">Free Hospital Beds</span></div>
                 <div className="nib"><span className="nib-num">10,000</span><span className="nib-label">Scholarships</span></div>
                 <div className="nib"><span className="nib-num">12</span><span className="nib-label">States Active</span></div>
               </div>

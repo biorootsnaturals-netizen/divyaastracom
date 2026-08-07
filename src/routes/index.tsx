@@ -111,7 +111,7 @@ function DivyaastraHome() {
   href="#contact"
   style={{
     color: "#16a34a",
-    fontWeight: 900,
+    fontWeight: 700,
     fontSize: "18px",
     textDecoration: "underline",
     textDecorationThickness: "2px",
@@ -123,13 +123,14 @@ function DivyaastraHome() {
 </li>
 
 <button className="nav-cta">Support Temple</button>
-
-          className="nav-toggle"
-          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-          aria-expanded={menuOpen}
-          aria-controls="mobile-nav"
-          onClick={() => setMenuOpen((open) => !open)}
-        >
+<button
+  type="button"
+  className="nav-toggle"
+  aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+  aria-expanded={menuOpen}
+  aria-controls="mobile-nav"
+  onClick={() => setMenuOpen((open) => !open)}
+>
           <span />
           <span />
           <span />

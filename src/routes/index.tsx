@@ -111,8 +111,8 @@ function DivyaastraHome() {
     href="#contact"
     style={{
       color: "#16a34a",
-      fontWeight: 700,
-      fontSize: "16px"
+      fontWeight: 900,
+      fontSize: "18px"
     }}
   >
     Contact Us

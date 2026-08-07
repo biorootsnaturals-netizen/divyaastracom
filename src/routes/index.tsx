@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import products, { type Product, type ProductCategory } from '@/data/products'
 
 export const Route = createFileRoute('/')({
@@ -94,7 +94,7 @@ function DivyaastraHome() {
           <li><a href="#products">Sacred Store</a></li>
           <li><a href="#mission">Mission</a></li>
           <li><a href="#food-mission">Annadaan</a></li>
-          <li><a href="#vault">Heritage Vault</a></li>
+          <li><a href="#experiences">Experiences</a></li>
           <li><a href="#foundation">Foundation</a></li>
         </ul><li><a href="#contact">Contact Us</a></li>
         <button className="nav-cta">Support Temple</button>
@@ -355,206 +355,14 @@ function DivyaastraHome() {
       </section>
 
       <div className="gold-divider" />
-      <div className="section-ornament">✦ &nbsp; Sacred Heritage Vault &nbsp; ✦</div>
+      <div className="section-ornament">✦ &nbsp; Divyaastra Experiences &nbsp; ✦</div>
       <div className="gold-divider" />
 
-      {/* VAULT */}
-      <section id="vault" className="section" style={{ background: 'var(--off-white)' }}>
-        <div className="vault-inner">
-          <div>
-            <div className="section-eyebrow reveal">Heritage Acquisitions</div>
-            <h2 className="section-title reveal title-gold">The Divyaastra Vault</h2>
-            <p className="section-body reveal">Museum-grade Vedic artifacts, consecrated Yantras, and heritage sacred objects. Every acquisition funds the eternal temple. For high-net-worth devotees seeking divine protection and legacy.</p>
-          </div>
-          <div className="vault-grid">
-            <div className="vault-item reveal">
-              <div className="vault-visual">🪬<span className="vault-provenance">11th Century · Authenticated</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Shri Yantra of Mahakaal</div>
-                <p className="vault-desc">Hand-engraved black tourmaline. Authenticated by the Archaeological Survey of India. Museum provenance documentation.</p>
-                <div className="vault-price">₹12,00,000</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">🔱<span className="vault-provenance">Kashi Consecrated</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Parad Shivling</div>
-                <p className="vault-desc">Solidified mercury Shivling — the rarest of sacred objects. Energised at Kashi Vishwanath by senior Pandits.</p>
-                <div className="vault-price">₹5,50,000</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">🌺<span className="vault-provenance">Bengal School · Rare</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Radha Krishna Patta Chitra</div>
-                <p className="vault-desc">12th generation Bengal master artisan on handmade silk. Museum provenance and certification of authenticity.</p>
-                <div className="vault-price">₹3,80,000</div>
-              </div>
-            </div>
+      {/* EXPERIENCES — PODCASTS, VIDEOS & REAL STORIES */}
+      <ExperiencesSection />
 
-            <div className="vault-item reveal">
-              <div className="vault-visual">🩸<span className="vault-provenance">Kamakhya Mahapeeth · Rarest</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Kamakhya Mata Sindoor</div>
-                <p className="vault-desc">Ambubachi-charged crimson sindoor from the Kamakhya Mahapeeth. The single rarest Tantric talisman — for love, dominion, and the breaking of malefic spells.</p>
-                <div className="vault-price">₹11,000</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">⚡<span className="vault-provenance">Datia Peetham · Sealed</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Bagalamukhi Yantra — Gold Plated</div>
-                <p className="vault-desc">Pitambari Devi Yantra for victory in litigation, debate and rivalry. Consecrated for 21 nights at Pitambara Peeth, Datia.</p>
-                <div className="vault-price">₹9,500</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">🪷<span className="vault-provenance">Mahalakshmi Tradition</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Maa Lakshmi Silver Charan Paduka</div>
-                <p className="vault-desc">Pure 99.9 silver footprints of Devi Mahalakshmi on red velvet. Daily abhishek invites the eternal flow of Shree into the home.</p>
-                <div className="vault-price">₹7,200</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">🛕<span className="vault-provenance">Sankat Mochan Lineage</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Sindoor-Charged Red Hanuman Idol</div>
-                <p className="vault-desc">Ashtadhatu Veer Hanuman bathed in genuine sindoor, hand-blessed at Sankat Mochan Mandir, Kashi. The shield against every fear and obstacle.</p>
-                <div className="vault-price">₹6,800</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">🔺<span className="vault-provenance">Vastu · 9-Plane Geometric</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Nine-Layer Copper Vastu Pyramid</div>
-                <p className="vault-desc">Nine-tier copper Maha Meru pyramid for Vastu doshas. Stabilises subtle currents in homes, offices and temples — a quiet engine of prosperity.</p>
-                <div className="vault-price">₹2,400</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">🜍<span className="vault-provenance">Mahakaleshwar · Bhasma Aarti</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Mahakaal Bhasma Locket</div>
-                <p className="vault-desc">Sacred ash from the only Bhasma Aarti in the world, sealed in a sterling silver Trishul locket. The wearer walks under Mahakaal's gaze.</p>
-                <div className="vault-price">₹3,900</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">💰<span className="vault-provenance">Ashtadhatu · Eight-Metal</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Ashtadhatu Kuber Yantra</div>
-                <p className="vault-desc">Hand-cast eight-metal Kuber Yantra in the traditional Banarasi foundry. Activates the northern wealth axis. For business owners and patriarchs.</p>
-                <div className="vault-price">₹4,800</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">🔮<span className="vault-provenance">Himalayan Quartz · Solid</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Sphatik Shree Yantra (Solid Crystal)</div>
-                <p className="vault-desc">Sri Yantra carved from a single block of natural Himalayan quartz. The geometry of the goddess in living crystal — the most luminous Lakshmi tool.</p>
-                <div className="vault-price">₹8,400</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">🪸<span className="vault-provenance">Italy Coral · Mars Charged</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Red Coral Hanuman Locket</div>
-                <p className="vault-desc">Untreated Italian moonga set in 22kt gold-plate. A double remedy — Hanuman bhakti and Mangal grah balance — for the warrior in pursuit.</p>
-                <div className="vault-price">₹5,200</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">🐚<span className="vault-provenance">Dakshinavarti · Lakshmi Vibhuti</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Dakshinavarti Shankh (Right-Spiral)</div>
-                <p className="vault-desc">A natural right-spiralling conch — one in ten thousand. Gem-tested. The personal residence of Devi Mahalakshmi when worshipped daily.</p>
-                <div className="vault-price">₹14,500</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">🥥<span className="vault-provenance">Ekakshi · Rarest Talisman</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Ekakshi Nariyal (One-Eyed Coconut)</div>
-                <p className="vault-desc">A genuine single-eyed coconut, sacred to Devi Mahalakshmi. Worshipped by ancient royal houses for unbroken wealth lineage. Authenticated specimen.</p>
-                <div className="vault-price">₹9,800</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">✨<span className="vault-provenance">Diwali Mahurat · Charged</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Mahalaxmi Kuber Dhan Varsha Set</div>
-                <p className="vault-desc">Twin yantra set — Mahalakshmi and Kuber — energised together at Lakshmi Pujan Mahurat. The classical pairing for unstoppable cash flow.</p>
-                <div className="vault-price">₹6,500</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">🔱<span className="vault-provenance">Shanidev · Saturn Charged</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Black Horseshoe Ring — Kaal Sarp Dosh</div>
-                <p className="vault-desc">Forged from the iron horseshoe of a black mare, sanctified at Shani Shingnapur. Quiets Kaal Sarp and Sade Sati. The veteran's remedy.</p>
-                <div className="vault-price">₹2,200</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">🌑<span className="vault-provenance">Tarapeeth · Sealed</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Maa Tara Bhasma Yantra</div>
-                <p className="vault-desc">A Mahavidya yantra carrying the bhasma of Tarapeeth's eternal smashan dhuni. For seekers walking the Tantric path of fearless wisdom.</p>
-                <div className="vault-price">₹7,800</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">🐢<span className="vault-provenance">Vastu · Direction Cure</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Brass Vastu Tortoise on Water Plate</div>
-                <p className="vault-desc">A heavy brass kachhua on a copper water plate — placed in the north it slows time, holds wealth, and steadies a household's fortune.</p>
-                <div className="vault-price">₹1,800</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">🗿<span className="vault-provenance">Trimbakeshwar Sourced</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Trimbakeshwar Black Stone Shivling</div>
-                <p className="vault-desc">Dense black-stone Shivling from the Brahmagiri foothills near Trimbakeshwar Jyotirling. The ideal centerpiece for a serious daily Rudra abhishek.</p>
-                <div className="vault-price">₹4,400</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">🦁<span className="vault-provenance">Kashi Bhairav Mandir</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Kaal Bhairav Sterling Locket</div>
-                <p className="vault-desc">Hand-engraved Kotwal of Kashi locket on black thread. Wear over the chest for protection from accidents, debts and unseen attack.</p>
-                <div className="vault-price">₹3,200</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">🌰<span className="vault-provenance">Nepali Certified · 9 Mukhi</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Nine-Mukhi Rudraksha (Rare)</div>
-                <p className="vault-desc">A certified nine-faced Nepali Rudraksha — the bead of Maa Durga's nine Shaktis. Rarest beyond the five-mukhi. Worn by warriors and protectors.</p>
-                <div className="vault-price">₹12,500</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">🍚<span className="vault-provenance">Kashi Tradition</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Annapurna Pure Brass Murti</div>
-                <p className="vault-desc">Devi of food and abundance — solid brass, Kashi-style. Placed in the kitchen, no plate ever leaves the home empty. A lineage offering.</p>
-                <div className="vault-price">₹3,800</div>
-              </div>
-            </div>
-            <div className="vault-item reveal">
-              <div className="vault-visual">🎼<span className="vault-provenance">Crystal Carved · Vidya Shakti</span></div>
-              <div className="vault-content">
-                <div className="vault-name">Saraswati Sphatik Veena Idol</div>
-                <p className="vault-desc">Devi Saraswati hand-carved from a single piece of natural sphatik. For students, scholars, founders and artists building a legacy.</p>
-                <div className="vault-price">₹5,400</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* COMMUNITY REVIEWS */}
+      <CommunityReviews />
 
       <div className="gold-divider" />
       <div className="section-ornament">✦ &nbsp; Join the Sacred Mission &nbsp; ✦</div>
@@ -630,15 +438,9 @@ function DivyaastraHome() {
 
     <span className="hero-eyebrow">GET IN TOUCH</span>
 
-    <h2
-  className="hero-title"
-  style={{
-    color: "#D4AF37""
-  }}
->
- <h2 className="hero-title">
-  Contact Us
-</h2>
+    <h2 className="hero-title" style={{ color: "#D4AF37" }}>
+      Contact Us
+    </h2>
 
     <p className="hero-tagline">
       We'd love to hear from you. Reach out to the Divyaastra Foundation.
@@ -774,5 +576,365 @@ function ProductCard({ product }: ProductCardProps) {
         </div>
       </div>
     </Link>
+  )
+}
+
+/* ============================================================
+   EXPERIENCES — Podcasts, Videos & Real Stories
+   All artwork is generated with CSS/SVG; no external images.
+   ============================================================ */
+
+type Platform = 'youtube' | 'instagram' | 'spotify' | 'shorts'
+
+type VideoCard = {
+  badge: string
+  title: string
+  duration: string
+  platform: Platform
+  platformLabel: string
+  glyph: string
+  tone: [string, string]
+}
+
+const experienceVideos: VideoCard[] = [
+  {
+    badge: 'Podcast',
+    title: 'Power of Rudraksha with Acharya Ji',
+    duration: '22:18',
+    platform: 'youtube',
+    platformLabel: 'YouTube',
+    glyph: 'ॐ',
+    tone: ['#5A4326', '#1E1409'],
+  },
+  {
+    badge: 'Customer Story',
+    title: 'How Rudraksha Changed My Life',
+    duration: '01:32',
+    platform: 'instagram',
+    platformLabel: 'Instagram Reel',
+    glyph: 'श्री',
+    tone: ['#4E3B2A', '#1A120B'],
+  },
+  {
+    badge: 'Temple Ritual',
+    title: '21-Day Hanuman Ritual at Divyaastra',
+    duration: '02:45',
+    platform: 'youtube',
+    platformLabel: 'YouTube',
+    glyph: 'ह्रीं',
+    tone: ['#6B4A1E', '#1C1206'],
+  },
+  {
+    badge: 'Podcast',
+    title: 'Astrology Remedies for a Better Life',
+    duration: '19:07',
+    platform: 'spotify',
+    platformLabel: 'Spotify',
+    glyph: 'ऐं',
+    tone: ['#3F3520', '#15110A'],
+  },
+  {
+    badge: 'Product Demo',
+    title: 'Rudraksha Bracelet Unboxing & Benefits',
+    duration: '01:01',
+    platform: 'instagram',
+    platformLabel: 'Instagram Reel',
+    glyph: 'क्लीं',
+    tone: ['#6A4B2C', '#20140A'],
+  },
+  {
+    badge: 'Spiritual Shorts',
+    title: 'Hanuman Kripa In 60 Seconds',
+    duration: '00:46',
+    platform: 'shorts',
+    platformLabel: 'YouTube Shorts',
+    glyph: 'ह्रौं',
+    tone: ['#71341A', '#1F0D06'],
+  },
+]
+
+function PlatformIcon({ platform }: { platform: Platform }) {
+  if (platform === 'youtube') {
+    return (
+      <svg className="vid-plat-icon" viewBox="0 0 24 18" aria-hidden="true">
+        <rect width="24" height="18" rx="5" fill="#FF0000" />
+        <path d="M9.6 5.1 16 9l-6.4 3.9V5.1Z" fill="#fff" />
+      </svg>
+    )
+  }
+  if (platform === 'shorts') {
+    return (
+      <svg className="vid-plat-icon" viewBox="0 0 24 18" aria-hidden="true">
+        <rect width="24" height="18" rx="5" fill="#FF0033" />
+        <path d="M13.4 3.4 8.8 9.3h2.7l-1.3 5.3 4.9-6.1h-2.9l1.2-5.1Z" fill="#fff" />
+      </svg>
+    )
+  }
+  if (platform === 'spotify') {
+    return (
+      <svg className="vid-plat-icon" viewBox="0 0 20 20" aria-hidden="true">
+        <circle cx="10" cy="10" r="10" fill="#1DB954" />
+        <path
+          d="M5.3 7.4c3-.8 6.2-.6 8.9.8M5.9 10.3c2.5-.7 5.2-.5 7.4.7M6.5 13c2.1-.5 4.3-.4 6.1.6"
+          stroke="#fff"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          fill="none"
+        />
+      </svg>
+    )
+  }
+  return (
+    <svg className="vid-plat-icon" viewBox="0 0 20 20" aria-hidden="true">
+      <defs>
+        <linearGradient id="ig-grad" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0%" stopColor="#FDCB52" />
+          <stop offset="35%" stopColor="#F1533E" />
+          <stop offset="70%" stopColor="#C42E92" />
+          <stop offset="100%" stopColor="#6A38B3" />
+        </linearGradient>
+      </defs>
+      <rect width="20" height="20" rx="6" fill="url(#ig-grad)" />
+      <rect x="4.5" y="4.5" width="11" height="11" rx="3.6" fill="none" stroke="#fff" strokeWidth="1.4" />
+      <circle cx="10" cy="10" r="2.9" fill="none" stroke="#fff" strokeWidth="1.4" />
+      <circle cx="14.1" cy="5.9" r="1" fill="#fff" />
+    </svg>
+  )
+}
+
+function Stars({ className = 'stars' }: { className?: string }) {
+  return (
+    <div className={className} aria-label="Rated 5 out of 5">
+      {[0, 1, 2, 3, 4].map((i) => (
+        <span key={i} aria-hidden="true">★</span>
+      ))}
+    </div>
+  )
+}
+
+function ExperiencesSection() {
+  const trackRef = useRef<HTMLDivElement | null>(null)
+  const [pages, setPages] = useState(1)
+  const [page, setPage] = useState(0)
+
+  const cardStep = (el: HTMLElement) => {
+    const card = el.querySelector('.vid-card') as HTMLElement | null
+    return card ? card.offsetWidth + 24 : Math.max(1, el.clientWidth)
+  }
+
+  const measure = useCallback(() => {
+    const el = trackRef.current
+    if (!el) return
+    const max = el.scrollWidth - el.clientWidth
+    const step = cardStep(el)
+    const total = max <= 1 ? 1 : Math.ceil(max / step) + 1
+    setPages(total)
+    setPage(max <= 1 ? 0 : Math.min(total - 1, Math.round(el.scrollLeft / step)))
+  }, [])
+
+  useEffect(() => {
+    const el = trackRef.current
+    if (!el) return
+    measure()
+    el.addEventListener('scroll', measure, { passive: true })
+    window.addEventListener('resize', measure)
+
+    // Pointer drag-to-scroll (mouse); touch swipe is handled natively by overflow-x.
+    let dragging = false
+    let startX = 0
+    let startScroll = 0
+    const down = (e: PointerEvent) => {
+      if (e.pointerType === 'touch') return
+      dragging = true
+      startX = e.clientX
+      startScroll = el.scrollLeft
+      el.classList.add('is-dragging')
+    }
+    const move = (e: PointerEvent) => {
+      if (!dragging) return
+      e.preventDefault()
+      el.scrollLeft = startScroll - (e.clientX - startX)
+    }
+    const up = () => {
+      dragging = false
+      el.classList.remove('is-dragging')
+    }
+    el.addEventListener('pointerdown', down)
+    window.addEventListener('pointermove', move)
+    window.addEventListener('pointerup', up)
+
+    return () => {
+      el.removeEventListener('scroll', measure)
+      window.removeEventListener('resize', measure)
+      el.removeEventListener('pointerdown', down)
+      window.removeEventListener('pointermove', move)
+      window.removeEventListener('pointerup', up)
+    }
+  }, [measure])
+
+  const scrollByPage = (dir: 1 | -1) => {
+    const el = trackRef.current
+    if (!el) return
+    const step = cardStep(el)
+    const perView = Math.max(1, Math.floor(el.clientWidth / step))
+    el.scrollBy({ left: dir * step * perView, behavior: 'smooth' })
+  }
+
+  const goToPage = (index: number) => {
+    const el = trackRef.current
+    if (!el || pages < 2) return
+    const max = el.scrollWidth - el.clientWidth
+    el.scrollTo({ left: Math.min(max, cardStep(el) * index), behavior: 'smooth' })
+  }
+
+  return (
+    <section id="experiences" className="section vids-section">
+      <div className="vids-inner">
+        <div className="vids-head">
+          <div className="section-eyebrow reveal">Divyaastra Experiences</div>
+          <h2 className="section-title reveal title-gold vids-title">Podcasts, Videos &amp; Real Stories</h2>
+          <div className="vids-diamond reveal" aria-hidden="true" />
+        </div>
+
+        <div className="vids-subrow reveal">
+          <p className="vids-sub">Insights, divine conversations and real experiences from our community.</p>
+          <div className="vids-controls">
+            <button type="button" className="vids-arrow" onClick={() => scrollByPage(-1)} aria-label="Previous videos">
+              ‹
+            </button>
+            <button type="button" className="vids-arrow" onClick={() => scrollByPage(1)} aria-label="Next videos">
+              ›
+            </button>
+            <a href="#experiences" className="vids-viewall">
+              View All Videos
+              <span className="vids-viewall-dot" aria-hidden="true">▶</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="vids-viewport">
+          <div className="vids-track" ref={trackRef}>
+            {experienceVideos.map((video) => (
+              <article className="vid-card reveal" key={video.title}>
+                <div
+                  className="vid-thumb"
+                  style={{ ['--tone-a' as string]: video.tone[0], ['--tone-b' as string]: video.tone[1] }}
+                >
+                  <span className="vid-thumb-glyph" aria-hidden="true">{video.glyph}</span>
+                  <span className="vid-badge">{video.badge}</span>
+                  <button type="button" className="vid-play" aria-label={`Play ${video.title}`}>
+                    <span className="vid-play-tri" aria-hidden="true" />
+                  </button>
+                  <span className="vid-duration">{video.duration}</span>
+                </div>
+                <div className="vid-body">
+                  <h3 className="vid-title">{video.title}</h3>
+                  <div className="vid-platform">
+                    <PlatformIcon platform={video.platform} />
+                    <span>{video.platformLabel}</span>
+                  </div>
+                  <Stars className="stars vid-stars" />
+                </div>
+              </article>
+            ))}
+          </div>
+          <button type="button" className="vids-edge-arrow" onClick={() => scrollByPage(1)} aria-label="Scroll videos forward">
+            ›
+          </button>
+        </div>
+
+        <div className="vids-dots" role="tablist" aria-label="Video carousel pages" hidden={pages < 2}>
+          {Array.from({ length: pages }).map((_, i) => (
+            <button
+              type="button"
+              key={i}
+              role="tab"
+              aria-selected={i === page}
+              aria-label={`Go to slide ${i + 1}`}
+              className={`vids-dot${i === page ? ' active' : ''}`}
+              onClick={() => goToPage(i)}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ============================================================
+   COMMUNITY REVIEWS
+   ============================================================ */
+
+const communityReviews = [
+  {
+    name: 'Rahul Sharma',
+    city: 'Delhi',
+    initials: 'RS',
+    quote:
+      'The Rudraksha bracelet I purchased from Divyaastra has brought so much positive energy and calmness in my life. Truly authentic and powerful.',
+  },
+  {
+    name: 'Priya Mehta',
+    city: 'Mumbai',
+    initials: 'PM',
+    quote:
+      'Excellent quality products and beautifully packed with so much positivity. I feel the difference in energy within days.',
+  },
+  {
+    name: 'Amit Verma',
+    city: 'Bengaluru',
+    initials: 'AV',
+    quote:
+      'The consultation was very detailed and practical. It gave me clarity and direction in a very confusing phase of life.',
+  },
+  {
+    name: 'Neha Joshi',
+    city: 'Pune',
+    initials: 'NJ',
+    quote:
+      "Divyaastra is not just a store, it's a spiritual family. Grateful for the guidance and support.",
+  },
+]
+
+function CommunityReviews() {
+  return (
+    <section id="community-reviews" className="section reviews-section">
+      <div className="vids-inner">
+        <div className="reviews-rule" aria-hidden="true">
+          <span className="reviews-rule-diamond" />
+        </div>
+        <div className="vids-head">
+          <div className="section-eyebrow reveal">Divyaastra Community</div>
+          <h2 className="section-title reveal title-gold reviews-title">What Our Community Says</h2>
+          <div className="vids-diamond reveal" aria-hidden="true" />
+        </div>
+
+        <div className="reviews-grid">
+          {communityReviews.map((review) => (
+            <figure className="review-card reveal" key={review.name}>
+              <div className="review-mandala" aria-hidden="true" />
+              <div className="review-top">
+                <span className="review-quote-mark" aria-hidden="true">“</span>
+                <Stars className="stars review-stars" />
+              </div>
+              <blockquote className="review-text">{review.quote}</blockquote>
+              <figcaption className="review-author">
+                <span className="review-avatar" aria-hidden="true">{review.initials}</span>
+                <span>
+                  <span className="review-name">{review.name}</span>
+                  <span className="review-city">{review.city}</span>
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <div className="reviews-cta-row">
+          <a href="#community-reviews" className="btn-gold-outline reviews-cta">
+            Read More Reviews &nbsp;✦
+          </a>
+        </div>
+      </div>
+    </section>
   )
 }

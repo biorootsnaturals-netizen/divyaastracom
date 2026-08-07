@@ -162,7 +162,7 @@ function DivyaastraHome() {
             <span className="hstat-label">Animals Cared</span>
           </div>
           <div className="hstat">
-            <span className="hstat-num">500 Beds</span>
+            <span className="hstat-num">3,000 Beds</span>
             <span className="hstat-label">Free Hospital</span>
           </div>
         </div>
@@ -348,7 +348,7 @@ function DivyaastraHome() {
                 <span className="food-counter-label">Animals Cared For</span>
               </div>
               <div className="food-counter">
-                <span className="food-counter-num">500 Beds</span>
+                <span className="food-counter-num">3,000 Beds</span>
                 <span className="food-counter-label">Free Hospital</span>
               </div>
             </div>
@@ -372,7 +372,7 @@ function DivyaastraHome() {
               <span className="food-service-icon">🏥</span>
               <div>
                 <div className="food-service-title">Dhanvantari Free Hospital</div>
-                <p className="food-service-desc">500-bed hospital with Ayurvedic and allopathic wings. All treatment free for pilgrims and the underprivileged. Staffed by 200 doctors and volunteers.</p>
+                <p className="food-service-desc">3,000-bed hospital — India's largest free hospital campus — with Ayurvedic and allopathic wings. All treatment free for pilgrims and the underprivileged. Staffed by 200 doctors and volunteers.</p>
               </div>
             </div>
             <div className="food-service-card">

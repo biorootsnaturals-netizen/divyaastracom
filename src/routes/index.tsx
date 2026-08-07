@@ -509,7 +509,7 @@ function DivyaastraHome() {
 
         <p>
           <strong>☎ Phone</strong><br />
-          <a href="tel:+61296263133">+61 2 9626 3133</a>
+          <a href="tel:+61296003033">+61 2 9600 3033</a>
         </p>
 
         <p>
@@ -577,7 +577,7 @@ function DivyaastraHome() {
 >
   <strong>Temple Project Notice:</strong> The proposed Divyaastra Temple is a future visionary project currently in the conceptual and planning stage. Information presented on this website is for informational purposes only. No donations, investments, memberships, crowdfunding contributions, or public financial support are currently being requested or accepted for temple construction.
 </div>
-          <span className="footer-copy">© 2026 Divyaastra Foundation. All Rights Reserved. Section 8 Company. FCRA Eligible. Tax-Exempt Donations.</span>
+          <span className="footer-copy">© 2026 Divyaastra Foundation. All Rights Reserved. Section 8 Company.Tax-Exempt Donations.</span>
           <span className="footer-reg">ॐ नमः शिवाय</span>
         </div>
       </footer>

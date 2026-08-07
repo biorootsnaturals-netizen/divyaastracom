@@ -8,6 +8,15 @@ export const Route = createFileRoute('/')({
 
 type ProductFilter = 'all-products' | ProductCategory
 
+const mobileNavLinks: Array<{ href: string; label: string }> = [
+  { href: '#products', label: 'Sacred Store' },
+  { href: '#mission', label: 'Mission' },
+  { href: '#food-mission', label: 'Annadaan' },
+  { href: '#experiences', label: 'Experiences' },
+  { href: '#foundation', label: 'Foundation' },
+  { href: '#contact', label: 'Contact Us' },
+]
+
 const productFilters: Array<{
   id: ProductFilter
   label: string
@@ -47,6 +56,7 @@ const productFilters: Array<{
 
 function DivyaastraHome() {
   const [activeFilter, setActiveFilter] = useState<ProductFilter>('all-products')
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const reveals = document.querySelectorAll('.reveal')
@@ -96,9 +106,31 @@ function DivyaastraHome() {
           <li><a href="#food-mission">Annadaan</a></li>
           <li><a href="#experiences">Experiences</a></li>
           <li><a href="#foundation">Foundation</a></li>
-        </ul><li><a href="#contact">Contact Us</a></li>
+        </ul><li className="nav-contact"><a href="#contact">Contact Us</a></li>
         <button className="nav-cta">Support Temple</button>
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-nav"
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </nav>
+
+      {/* MOBILE NAV PANEL */}
+      <div id="mobile-nav" className={`nav-mobile-panel${menuOpen ? ' is-open' : ''}`}>
+        {mobileNavLinks.map((link) => (
+          <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
+            {link.label}
+          </a>
+        ))}
+        <button className="nav-cta" onClick={() => setMenuOpen(false)}>Support Temple</button>
+      </div>
 
       {/* HERO */}
       <section id="hero">
@@ -250,7 +282,7 @@ function DivyaastraHome() {
       <div className="gold-divider" />
 
       {/* INTERIOR */}
-      <section id="interior" style={{ padding: '100px 70px' }}>
+      <section id="interior">
         <div className="interior-inner">
           <div>
             <div className="section-eyebrow reveal">Temple Architecture</div>
@@ -434,7 +466,7 @@ function DivyaastraHome() {
       </section>
 
 <section id="contact" className="section">
-  <div className="container" style={{ textAlign: "center", padding: "80px 20px" }}>
+  <div className="contact-inner">
 
     <span className="hero-eyebrow">GET IN TOUCH</span>
 
@@ -446,7 +478,7 @@ function DivyaastraHome() {
       We'd love to hear from you. Reach out to the Divyaastra Foundation.
     </p>
 
-    <div style={{ maxWidth: "700px", margin: "40px auto", lineHeight: "2", fontSize: "18px" }}>
+    <div className="contact-details">
 
       <p>
           <strong>📍 United States Office</strong><br />112 N Main Street, Robbinsville, NJ 08561, United States

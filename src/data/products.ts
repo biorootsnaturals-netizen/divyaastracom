@@ -162,17 +162,7 @@ const products: Array<Product> = [
     badgeColor: '#D4AF37',
     unit: 'combo',
   },
-  {
-    id: 13,
-    name: 'Panch Aarti Diya',
-    image: '/images/aarti-lamp.jpg',
-    description: 'Five-faced brass aarti lamp with ornate handle. Perfect for evening sandhya aarti. Crafted to ancient temple design standards.',
-    shortDescription: 'Five-faced brass aarti lamp with ornate handle. Perfect for evening sandhya aarti.',
-    category: 'pooja-essentials',
-    price: 1799,
-    badge: 'Best Seller',
-    unit: 'piece',
-  },
+  
   {
     id: 14,
     name: 'Shankh (Conch Shell)',

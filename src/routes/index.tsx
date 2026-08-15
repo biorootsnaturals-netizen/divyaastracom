@@ -495,32 +495,40 @@ function DivyaastraHome() {
 
     <div className="contact-details">
 
-      <p>
-          <strong>📍 United States Office</strong><br />112 N Main Street, Robbinsville, NJ 08561, United States
-        </p>
+    <p>
+  <strong>📍 United States Office</strong><br />
+  112 N Main Street, Robbinsville, NJ 08561, United States
+</p>
 
-        <p>
-          <strong>☎ Phone</strong><br />
-          <a href="tel:+16099191212">+1 (609) 919-1212</a>
-        </p>
+<p>
+  <strong>☎ Phone</strong><br />
+  <a href="tel:+18009001111">+1 (800) 900-1111</a>
+</p>
 
-        <p>
-          <strong>📍 Australia Office</strong><br />42 Station Road, Seven Hills, NSW 2147, Australia
-        </p>
+<p>
+  <strong>📍 Australia Office</strong><br />
+  42 Station Road, Seven Hills, NSW 2147, Australia
+</p>
 
-        <p>
-          <strong>☎ Phone</strong><br />
-          <a href="tel:+61296003033">+61 2 9600 3033</a>
-        </p>
+<p>
+  <strong>☎ Phone</strong><br />
+  <a href="tel:1800110111">1800 110 111</a>
+</p>
 
-        <p>
-          <strong>📍 India Office</strong><br />The Camellias, DLF Golf Links, DLF Phase 5, Sector 42, Gurugram, Haryana 122009, India
-        </p>
+<p>
+  <strong>📍 India Office</strong><br />
+  The Camellias, DLF Golf Links, DLF Phase 5, Sector 42, Gurugram, Haryana 122009, India
+</p>
 
-        <p>
-          <strong>✉ Email</strong><br />
-          <a href="mailto:info@divyaastra.com">info@divyaastra.com</a>
-        </p>
+<p>
+  <strong>☎ Phone</strong><br />
+  <a href="tel:18001110999">1800 111 0999</a>
+</p>
+
+<p>
+  <strong>✉ Email</strong><br />
+  <a href="mailto:info@divyaastra.com">info@divyaastra.com</a>
+</p>
 
 
 

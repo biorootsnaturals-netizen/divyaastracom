@@ -134,6 +134,9 @@ nav {
 .vision-showcase-frame img,
 .vision-showcase-frame video {
   display: block; width: 100%; height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #06080A;
 }
 .vision-showcase-caption {
   font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 5px;

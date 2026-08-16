@@ -495,44 +495,66 @@ function DivyaastraHome() {
 
     <div className="contact-details">
 
-    <p>
-  <strong>📍 United States Office</strong><br />
-  112 N Main Street, Robbinsville, NJ 08561, United States
-</p>
+  <form
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  className="contact-form"
+>
+  <input
+    type="hidden"
+    name="access_key"
+    value="009613e9-852e-4ef8-90cb-3c272caaaf29"
+  />
 
-<p>
-  <strong>☎ Phone</strong><br />
-  <a href="tel:+18009001111">+1 (800) 900-1111</a>
-</p>
+  <input
+    type="hidden"
+    name="subject"
+    value="New Enquiry from Divyaastra Website"
+  />
 
-<p>
-  <strong>📍 Australia Office</strong><br />
-  42 Station Road, Seven Hills, NSW 2147, Australia
-</p>
+  <input
+    type="hidden"
+    name="from_name"
+    value="Divyaastra Website"
+  />
 
-<p>
-  <strong>☎ Phone</strong><br />
-  <a href="tel:1800110111">1800 110 111</a>
-</p>
+  <label>Your Name</label>
+  <input
+    type="text"
+    name="name"
+    placeholder="Enter your name"
+    required
+  />
 
-<p>
-  <strong>📍 India Office</strong><br />
-  The Camellias, DLF Golf Links, DLF Phase 5, Sector 42, Gurugram, Haryana 122009, India
-</p>
+  <label>Email Address</label>
+  <input
+    type="email"
+    name="email"
+    placeholder="Enter your email"
+    required
+  />
 
-<p>
-  <strong>☎ Phone</strong><br />
-  <a href="tel:18001110999">1800 111 0999</a>
-</p>
+  <label>Select Enquiry</label>
+  <select name="enquiry" required>
+    <option value="">Select an enquiry</option>
+    <option value="General Enquiry">General Enquiry</option>
+    <option value="Products">Products</option>
+    <option value="Kundli & Astrology">Kundli & Astrology</option>
+    <option value="Temple & Foundation">Temple & Foundation</option>
+    <option value="Partnership">Partnership</option>
+    <option value="Other">Other</option>
+  </select>
 
-<p>
-  <strong>✉ Email</strong><br />
-  <a href="mailto:info@divyaastra.com">info@divyaastra.com</a>
-</p>
+  <label>How can we help you?</label>
+  <textarea
+    name="message"
+    rows={5}
+    placeholder="Write your message here..."
+    required
+  ></textarea>
 
-
-
-    </div>
+  <button type="submit">Send Enquiry</button>
+</form>
 
   </div>
 </section>

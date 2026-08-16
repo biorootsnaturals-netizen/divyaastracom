@@ -556,9 +556,9 @@ function DivyaastraHome() {
   <button type="submit">Send Enquiry</button>
 </form>
 
+   </div>
   </div>
 </section>
-
       
       {/* FOOTER */}
       <footer>

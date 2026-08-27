@@ -1013,42 +1013,105 @@ function CommunityReviews() {
         </div>
       </div>
           <div
-      style={{
-        position: 'fixed',
-        right: '22px',
-        bottom: '22px',
-        zIndex: 9999,
-      }}
+  style={{
+    position: 'fixed',
+    right: '22px',
+    bottom: '22px',
+    zIndex: 9999,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '12px',
+    alignItems: 'center',
+  }}
+>
+  {/* WhatsApp */}
+  <a
+    href="https://wa.me/919773891454?text=Hello%20Divyaastra%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with Divyaastra on WhatsApp"
+    style={{
+      width: '58px',
+      height: '58px',
+      borderRadius: '50%',
+      background: '#25D366',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      boxShadow: '0 5px 18px rgba(0,0,0,0.22)',
+      textDecoration: 'none',
+    }}
+  >
+    <svg
+      width="30"
+      height="30"
+      viewBox="0 0 24 24"
+      fill="white"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
     >
-      <a
-        href="https://wa.me/919773891454?text=Hello%20Divyaastra%2C%20I%20would%20like%20to%20make%20an%20enquiry."
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat with Divyaastra on WhatsApp"
-        style={{
-          width: '58px',
-          height: '58px',
-          borderRadius: '50%',
-          background: '#25D366',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          boxShadow: '0 5px 18px rgba(0,0,0,0.22)',
-          textDecoration: 'none',
-        }}
-      >
-        <svg
-          width="30"
-          height="30"
-          viewBox="0 0 24 24"
-          fill="white"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-          <path d="M20.52 3.48A11.87 11.87 0 0 0 12.06 0C5.49 0 .14 5.35.14 11.92c0 2.1.55 4.15 1.59 5.96L.03 24l6.27-1.64a11.9 11.9 0 0 0 5.76 1.47h.01c6.57 0 11.92-5.35 11.92-11.92 0-3.18-1.24-6.17-3.47-8.43ZM12.07 21.8h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.72.98.99-3.63-.23-.37a9.87 9.87 0 0 1-1.51-5.27C2.2 6.46 6.63 2.04 12.07 2.04c2.63 0 5.1 1.02 6.96 2.89a9.82 9.82 0 0 1 2.88 6.97c0 5.44-4.42 9.9-9.84 9.9Zm5.42-7.42c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.35.23-.65.08-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.77-1.64-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.63-.93-2.23-.25-.59-.5-.51-.68-.52h-.58c-.2 0-.53.08-.81.38-.28.3-1.06 1.04-1.06 2.54s1.09 2.95 1.24 3.15c.15.2 2.15 3.28 5.21 4.6.73.32 1.3.51 1.74.65.73.23 1.39.2 1.91.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35Z"/>
-        </svg>
-      </a>
-    </div>
+      <path d="M20.52 3.48A11.87 11.87 0 0 0 12.06 0C5.49 0 .14 5.35.14 11.92c0 2.1.55 4.15 1.59 5.96L.03 24l6.27-1.64a11.9 11.9 0 0 0 5.76 1.47h.01c6.57 0 11.92-5.35 11.92-11.92 0-3.18-1.24-6.17-3.47-8.43ZM12.07 21.8h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.72.98.99-3.63-.23-.37a9.87 9.87 0 0 1-1.51-5.27C2.2 6.46 6.63 2.04 12.07 2.04c2.63 0 5.1 1.02 6.96 2.89a9.82 9.82 0 0 1 2.88 6.97c0 5.44-4.42 9.9-9.84 9.9Zm5.42-7.42c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.35.23-.65.08-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.77-1.64-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.53.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.08-.15-.68-1.63-.93-2.23-.25-.59-.5-.51-.68-.52h-.58c-.2 0-.53.08-.81.38-.28.3-1.06 1.04-1.06 2.54s1.09 2.95 1.24 3.15c.15.2 2.15 3.28 5.21 4.6.73.32 1.3.51 1.74.65.73.23 1.39.2 1.91.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.08-.13-.28-.2-.58-.35Z" />
+    </svg>
+  </a>
+
+  {/* Instagram - placeholder until account is ready */}
+  <div
+    aria-label="Instagram"
+    title="Instagram coming soon"
+    style={{
+      width: '58px',
+      height: '58px',
+      borderRadius: '50%',
+      background: 'linear-gradient(135deg, #833AB4, #E1306C, #F77737)',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      boxShadow: '0 5px 18px rgba(0,0,0,0.22)',
+      cursor: 'default',
+    }}
+  >
+    <svg
+      width="29"
+      height="29"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="5" stroke="white" strokeWidth="2" />
+      <circle cx="12" cy="12" r="4" stroke="white" strokeWidth="2" />
+      <circle cx="17.5" cy="6.5" r="1.2" fill="white" />
+    </svg>
+  </div>
+
+  {/* YouTube - placeholder until account is ready */}
+  <div
+    aria-label="YouTube"
+    title="YouTube coming soon"
+    style={{
+      width: '58px',
+      height: '58px',
+      borderRadius: '50%',
+      background: '#FF0000',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      boxShadow: '0 5px 18px rgba(0,0,0,0.22)',
+      cursor: 'default',
+    }}
+  >
+    <svg
+      width="31"
+      height="31"
+      viewBox="0 0 24 24"
+      fill="white"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z" />
+    </svg>
+  </div>
+</div>
     </section>
   )
 }

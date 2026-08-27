@@ -1012,15 +1012,15 @@ function CommunityReviews() {
           </a>
         </div>
       </div>
-          <div
+       <div
   style={{
     position: 'fixed',
-    right: '22px',
-    bottom: '22px',
+    right: '18px',
+    bottom: '18px',
     zIndex: 9999,
     display: 'flex',
     flexDirection: 'column',
-    gap: '12px',
+    gap: '9px',
     alignItems: 'center',
   }}
 >
@@ -1031,20 +1031,40 @@ function CommunityReviews() {
     rel="noopener noreferrer"
     aria-label="Chat with Divyaastra on WhatsApp"
     style={{
-      width: '58px',
-      height: '58px',
+      width: '46px',
+      height: '46px',
       borderRadius: '50%',
       background: '#25D366',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      boxShadow: '0 5px 18px rgba(0,0,0,0.22)',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.20)',
       textDecoration: 'none',
+      transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.transform = 'scale(1.12)';
+      e.currentTarget.style.boxShadow = '0 6px 18px rgba(37,211,102,0.45)';
+      e.currentTarget.animate(
+        [
+          { transform: 'translateX(0)' },
+          { transform: 'translateX(-3px)' },
+          { transform: 'translateX(3px)' },
+          { transform: 'translateX(-2px)' },
+          { transform: 'translateX(2px)' },
+          { transform: 'translateX(0)' },
+        ],
+        { duration: 350 }
+      );
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.transform = 'scale(1)';
+      e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.20)';
     }}
   >
     <svg
-      width="30"
-      height="30"
+      width="24"
+      height="24"
       viewBox="0 0 24 24"
       fill="white"
       xmlns="http://www.w3.org/2000/svg"
@@ -1054,25 +1074,48 @@ function CommunityReviews() {
     </svg>
   </a>
 
-  {/* Instagram - placeholder until account is ready */}
-  <div
+  {/* Instagram */}
+  <a
+    href="#"
     aria-label="Instagram"
     title="Instagram coming soon"
+    onClick={(e) => e.preventDefault()}
     style={{
-      width: '58px',
-      height: '58px',
+      width: '46px',
+      height: '46px',
       borderRadius: '50%',
       background: 'linear-gradient(135deg, #833AB4, #E1306C, #F77737)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      boxShadow: '0 5px 18px rgba(0,0,0,0.22)',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.20)',
+      textDecoration: 'none',
       cursor: 'default',
+      transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.transform = 'scale(1.12)';
+      e.currentTarget.style.boxShadow = '0 6px 18px rgba(225,48,108,0.45)';
+      e.currentTarget.animate(
+        [
+          { transform: 'translateX(0)' },
+          { transform: 'translateX(-3px)' },
+          { transform: 'translateX(3px)' },
+          { transform: 'translateX(-2px)' },
+          { transform: 'translateX(2px)' },
+          { transform: 'translateX(0)' },
+        ],
+        { duration: 350 }
+      );
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.transform = 'scale(1)';
+      e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.20)';
     }}
   >
     <svg
-      width="29"
-      height="29"
+      width="23"
+      height="23"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -1082,27 +1125,50 @@ function CommunityReviews() {
       <circle cx="12" cy="12" r="4" stroke="white" strokeWidth="2" />
       <circle cx="17.5" cy="6.5" r="1.2" fill="white" />
     </svg>
-  </div>
+  </a>
 
-  {/* YouTube - placeholder until account is ready */}
-  <div
+  {/* YouTube */}
+  <a
+    href="#"
     aria-label="YouTube"
     title="YouTube coming soon"
+    onClick={(e) => e.preventDefault()}
     style={{
-      width: '58px',
-      height: '58px',
+      width: '46px',
+      height: '46px',
       borderRadius: '50%',
       background: '#FF0000',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      boxShadow: '0 5px 18px rgba(0,0,0,0.22)',
+      boxShadow: '0 4px 12px rgba(0,0,0,0.20)',
+      textDecoration: 'none',
       cursor: 'default',
+      transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.transform = 'scale(1.12)';
+      e.currentTarget.style.boxShadow = '0 6px 18px rgba(255,0,0,0.40)';
+      e.currentTarget.animate(
+        [
+          { transform: 'translateX(0)' },
+          { transform: 'translateX(-3px)' },
+          { transform: 'translateX(3px)' },
+          { transform: 'translateX(-2px)' },
+          { transform: 'translateX(2px)' },
+          { transform: 'translateX(0)' },
+        ],
+        { duration: 350 }
+      );
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.transform = 'scale(1)';
+      e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.20)';
     }}
   >
     <svg
-      width="31"
-      height="31"
+      width="24"
+      height="24"
       viewBox="0 0 24 24"
       fill="white"
       xmlns="http://www.w3.org/2000/svg"
@@ -1110,7 +1176,7 @@ function CommunityReviews() {
     >
       <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z" />
     </svg>
-  </div>
+  </a>
 </div>
     </section>
   )

@@ -33,12 +33,14 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-   36  <body>
-37    <CartProvider>
-38      {children}
-39    </CartProvider>
-40    <Scripts />
-41  </body>
+     <body>
+    <CartProvider>
+      {children}
+    </CartProvider>
+    <Scripts />
+  </body>
+
+  
 )
   )
 }

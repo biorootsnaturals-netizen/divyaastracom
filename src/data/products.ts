@@ -27,7 +27,10 @@ const products: Array<Product> = [
     description: '5-mukhi certified Nepali Rudraksha. Energised by our senior Pandits with Shiva Panchakshara mantra. Wear for health, peace, and divine protection.',
     shortDescription: '5-mukhi certified Nepali Rudraksha. Energised by our senior Pandits with Shiva Panchakshara mantra.',
     category: 'malas-accessories',
-    price: 4499,
+    price: 1349.7,
+    originalPrice: 4499,
+    badge: '70% OFF',
+    badgeColor: '#2D5016',
     unit: 'mala',
   },
   {

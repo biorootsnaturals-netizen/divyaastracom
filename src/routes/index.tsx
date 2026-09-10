@@ -616,6 +616,14 @@ function DivyaastraHome() {
   )
 }
 
+/* Whole rupee prices stay as-is; prices with paise keep both decimals. */
+function formatPrice(amount: number) {
+  return amount.toLocaleString('en-IN', {
+    minimumFractionDigits: Number.isInteger(amount) ? 0 : 2,
+    maximumFractionDigits: 2,
+  })
+}
+
 interface ProductCardProps {
   product: Product
 }
@@ -645,10 +653,10 @@ function ProductCard({ product }: ProductCardProps) {
           <div className="product-price">
             {product.originalPrice && (
               <del style={{ color: '#999', fontSize: '14px', marginRight: '6px' }}>
-                ₹{product.originalPrice.toLocaleString('en-IN')}
+                ₹{formatPrice(product.originalPrice)}
               </del>
             )}
-            ₹{product.price.toLocaleString('en-IN')} <span>/ {product.unit}</span>
+            ₹{formatPrice(product.price)} <span>/ {product.unit}</span>
           </div>
         </div>
       </div>

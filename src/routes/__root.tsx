@@ -39,7 +39,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     </CartProvider>
     <Scripts />
   </body>
-
+</html>
   
 )
   )

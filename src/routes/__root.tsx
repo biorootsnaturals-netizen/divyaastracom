@@ -1,12 +1,19 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+import type { ReactNode } from 'react'
+import { CartProvider } from '@/cart/CartContext'
 import '../styles.css'
 
 export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'DIVYAASTRA — The World\'s Greatest Spiritual Sanctuary' },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+      {
+        title: "DIVYAASTRA — The World's Greatest Spiritual Sanctuary",
+      },
     ],
     links: [
       {
@@ -27,18 +34,18 @@ export const Route = createRootRoute({
   shellComponent: RootDocument,
 })
 
-function RootDocument({ children }: { children: React.ReactNode }) {
+function RootDocument({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
         <HeadContent />
       </head>
-     <body>
-    <CartProvider>
-      {children}
-    </CartProvider>
-    <Scripts />
-  </body>
-</html>
-  
-)
+      <body>
+        <CartProvider>
+          {children}
+        </CartProvider>
+        <Scripts />
+      </body>
+    </html>
+  )
+}
